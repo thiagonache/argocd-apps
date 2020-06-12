@@ -4,12 +4,12 @@ metadata:
   name: bookinfo-a
   namespace: bookinfo
   finalizers:
-  - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: bookinfo
-    server: {{ .Values.spec.destination.server }}
-  project: default
+    server: { { .Values.spec.destination.server } }
+  project: bookinfo
   source:
     path: bookinfo
     repoURL: https://github.com/thiagonache/bookinfo
