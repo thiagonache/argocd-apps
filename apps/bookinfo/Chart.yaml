@@ -1,3 +1,4 @@
 apiVersion: v1
-name: bookinfo-apps
+name: bookinfo-ab-deploy
 version: 1
+appVersion: v1
