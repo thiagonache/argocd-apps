@@ -1,7 +1,7 @@
 spec:
   destination:
     server: https://kubernetes.default.svc
-  deploy-a:
+  deployA:
     appName: bookinfo-ab-a
-  deploy-b:
+  deployB:
     appName: bookinfo-ab-b

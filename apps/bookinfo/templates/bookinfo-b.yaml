@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: "{{ .Values.spec.deploy-b.appName }}"
+  name: "{{ .Values.spec.deployB.appName }}"
   namespace: bookinfo
   finalizers:
     - resources-finalizer.argocd.argoproj.io
