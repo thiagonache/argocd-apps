@@ -1,6 +1,10 @@
 spec:
+  namespace: bookinfo
   destination:
     server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/thiagonache/argocd-apps
+    revision: HEAD
   deployA:
     appName: bookinfo-abdeploy-a
   deployB:
