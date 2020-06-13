@@ -12,5 +12,5 @@ spec:
   project: bookinfo
   source:
     path: bookinfo
-    repoURL: https://github.com/thiagonache/bookinfo
+    repoURL: https://github.com/thiagonache/argocd-apps
     targetRevision: HEAD
