@@ -1,0 +1,54 @@
+##################################################################################################
+# Details service
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: details-{{ .Values.details.version }}
+  labels:
+    app: details
+    service: details
+    version: "{{ .Values.details.version }}"
+spec:
+  ports:
+    - port: 9080
+      name: http
+  selector:
+    app: details
+    version: "{{ .Values.details.version }}"
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: bookinfo-details-{{ .Values.details.version }}
+  labels:
+    account: details
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: details-{{ .Values.details.version }}
+  labels:
+    app: details
+    version: "{{ .Values.details.version }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: details
+      version: "{{ .Values.details.version }}"
+  template:
+    metadata:
+      labels:
+        app: details
+        version: "{{ .Values.details.version }}"
+    spec:
+      serviceAccountName: bookinfo-details-{{ .Values.details.version }}
+      containers:
+        - name: details
+          image: docker.io/istio/examples-bookinfo-details-{{ .Values.details.version }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9080
+---
+
