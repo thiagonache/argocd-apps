@@ -4,15 +4,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: productpage-{{ .Values.productpage.version }}
+  name: productpage
   labels:
     app: productpage
     service: productpage
-    version: "{{ .Values.productpage.version }}"
 spec:
   ports:
     - port: 9080
       name: http
   selector:
     app: productpage
-    version: "{{ .Values.productpage.version }}"
