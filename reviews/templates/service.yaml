@@ -17,11 +17,11 @@ kind: Service
 metadata:
   name: reviews-preview
   labels:
-    app: reviews-preview
+    app: reviews
     service: reviews-preview
 spec:
   ports:
     - port: 9080
       name: http
   selector:
-    app: reviews-preview
+    app: reviews
