@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: reviews-{{ .Values.reviews.version }}
   labels:
@@ -37,7 +37,7 @@ spec:
           emptyDir: {}
         - name: tmp
           emptyDir: {}
-strategy:
+  strategy:
     blueGreen:
       # Name of the service that the rollout modifies as the active service.
       activeService: active-service
