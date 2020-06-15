@@ -6,3 +6,5 @@ productpage:
   version: v1
 reviews:
   version: v2
+bookinfo:
+  namespace: bookinfo
