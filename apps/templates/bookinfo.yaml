@@ -3,8 +3,6 @@ kind: Application
 metadata:
   name: "{{ .Values.bookinfo.appName }}"
   namespace: "{{ .Values.bookinfo.namespace }}"
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: "{{ .Values.bookinfo.namespace }}"
