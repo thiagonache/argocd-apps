@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ratings-{{ .Values.ratings.version }}
+  labels:
+    app: ratings
+    version: "{{ .Values.ratings.version }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ratings
+      version: "{{ .Values.ratings.version }}"
+  template:
+    metadata:
+      labels:
+        app: ratings
+        version: "{{ .Values.ratings.version }}"
+    spec:
+      serviceAccountName: bookinfo-ratings-{{ .Values.ratings.version }}
+      containers:
+        - name: ratings
+          image: docker.io/istio/examples-bookinfo-ratings-{{ .Values.ratings.version }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9080
