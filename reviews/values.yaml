@@ -1,2 +1,2 @@
 reviews:
-  image: docker.io/istio/examples-bookinfo-reviews-v1
+  image: docker.io/istio/examples-bookinfo-reviews-v2
