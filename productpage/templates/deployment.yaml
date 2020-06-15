@@ -2,26 +2,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: productpage-{{ .Values.productpage.version }}
+  name: productpage
   labels:
     app: productpage
-    version: "{{ .Values.productpage.version }}"
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: productpage
-      version: "{{ .Values.productpage.version }}"
   template:
     metadata:
       labels:
         app: productpage
-        version: "{{ .Values.productpage.version }}"
     spec:
-      serviceAccountName: bookinfo-productpage-{{ .Values.productpage.version }}
+      serviceAccountName: bookinfo-productpage
       containers:
         - name: productpage
-          image: docker.io/istio/examples-bookinfo-productpage-{{ .Values.productpage.version }}
+          image: docker.io/istio/examples-bookinfo-productpage
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9080
@@ -31,4 +28,3 @@ spec:
       volumes:
         - name: tmp
           emptyDir: {}
----
