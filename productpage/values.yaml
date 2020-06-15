@@ -1,2 +1,2 @@
 productpage:
-  version: v1
+  image: docker.io/istio/examples-bookinfo-productpage-v1
