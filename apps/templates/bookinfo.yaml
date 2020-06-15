@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: "{{ .Values.spec.appName }}"
-  namespace: "{{ .Values.spec.namespace }}"
+  name: "{{ .Values.bookinfo.appName }}"
+  namespace: "{{ .Values.bookinfo.namespace }}"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: "{{ .Values.spec.namespace }}"
+    namespace: "{{ .Values.bookinfo.namespace }}"
     server: "{{ .Values.spec.destination.server }}"
   project: "{{ .Values.spec.project }}"
   source:
