@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: reviews
+  name: reviews-v1
   labels:
     app: reviews
 spec:
