@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: "{{ .Values.bookinfo.appName }}"
+  name: "reviews"
   namespace: "{{ .Values.bookinfo.namespace }}"
 spec:
   destination:
@@ -9,6 +9,6 @@ spec:
     server: "{{ .Values.spec.destination.server }}"
   project: "{{ .Values.spec.project }}"
   source:
-    path: bookinfo
+    path: reviews
     repoURL: "{{ .Values.spec.source.repoURL }}"
     targetRevision: "{{ .Values.spec.source.revision }}"
