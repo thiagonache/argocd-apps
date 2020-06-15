@@ -5,6 +5,6 @@ ratings:
 productpage:
   version: v1
 reviews:
-  version: v2
+  version: v1
 bookinfo:
   namespace: bookinfo
