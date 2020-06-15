@@ -5,7 +5,4 @@ spec:
   source:
     repoURL: https://github.com/thiagonache/argocd-apps
     revision: HEAD
-  deployA:
-    appName: bookinfo-abdeploy-a
-  deployB:
-    appName: bookinfo-ab-deploy-b
+  appName: bookinfo
