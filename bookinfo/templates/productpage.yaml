@@ -24,8 +24,8 @@ metadata:
   labels:
     account: productpage
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: productpage-{{ .Values.productpage.version }}
   labels:
@@ -56,5 +56,9 @@ spec:
       volumes:
         - name: tmp
           emptyDir: {}
+canary:
+  steps:
+  - setWeight: 20
+  - pause: {}
 ---
 
