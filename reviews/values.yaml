@@ -1,2 +1,4 @@
 reviews:
   image: docker.io/istio/examples-bookinfo-reviews-v2
+prometheus:
+  address: "http://prometheus-k8s.monitoring.svc.cluster.local:9090"
