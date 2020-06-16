@@ -35,8 +35,15 @@ spec:
         - name: tmp
           emptyDir: {}
   strategy:
-  # ----- Everything above this comment are the same as a deployment -----
+    # ----- Everything above this comment are the same as a deployment -----
     canary: # A new field that used to provide configurable options for a Canary strategy
       steps:
-      - setWeight: 20
-      - pause: {}
+        - setWeight: 20
+        - pause: 1m
+        - setWeight: 40
+        - pause: 30s
+        - setWeight: 60
+        - pause: 30s
+        - setWeight: 80
+        - pause: 30s
+        - setWeight: 100
