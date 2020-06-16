@@ -24,6 +24,18 @@ spec:
               value: "/tmp/logs"
           ports:
             - containerPort: 9080
+          livenessProbe:
+            httpGet:
+              path: /reviews/0
+              port: 9080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /reviews/0
+              port: 9080
+            initialDelaySeconds: 5
+            periodSeconds: 5
           volumeMounts:
             - name: tmp
               mountPath: /tmp
