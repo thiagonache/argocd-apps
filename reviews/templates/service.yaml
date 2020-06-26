@@ -24,4 +24,4 @@ spec:
     - port: 9080
       name: http
   selector:
-    app: reviews-preview
+    app: reviews
