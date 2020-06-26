@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: reviews
+  name: reviews-active
   labels:
     app: reviews
-    service: reviews
+    service: reviews-active
 spec:
   ports:
     - port: 9080
@@ -24,4 +24,4 @@ spec:
     - port: 9080
       name: http
   selector:
-    app: reviews-preview
+    app: reviews
