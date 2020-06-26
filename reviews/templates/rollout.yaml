@@ -76,9 +76,3 @@ spec:
       #scaleDownDelaySeconds: 30
       # Limits the number of old RS that can run at once before getting scaled down. Defaults to nil
       scaleDownDelayRevisionLimit: 2
-      trafficRouting:
-        istio:
-           virtualService:
-            name: rollout-virtualservice  # required
-            routes:
-            - primary
