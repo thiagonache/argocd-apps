@@ -10,7 +10,7 @@ spec:
     - port: 9080
       name: http
   selector:
-    app: reviews-active
+    app: reviews
 ---
 apiVersion: v1
 kind: Service
