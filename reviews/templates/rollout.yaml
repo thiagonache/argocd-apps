@@ -51,3 +51,28 @@ spec:
     blueGreen:
       activeService: reviews
       previewService: reviews-preview
+      # prePromotionAnalysis:
+      #   templates:
+      #   - templateName: success-rate
+      #   # template arguments
+      #   args:
+      #   - name: service-name
+      #     value: reviews.{{ .Release.Namespace }}.svc.cluster.local
+      # # Pre-promotion analysis run which performs analysis after the service cutover. +optional
+      # postPromotionAnalysis:
+      #   templates:
+      #   - templateName: success-rate
+      #   # template arguments
+      #   args:
+      #   - name: service-name
+      #     value: reviews.{{ .Release.Namespace }}.svc.cluster.local
+      # The number of replicas to run under the preview service before the switchover. Once the rollout is resumed the new replicaset will be full scaled up before the switch occurs +optional
+      previewReplicaCount: 1
+      # Indicates if the rollout should automatically promote the new ReplicaSet to the active service or enter a paused state. If not specified, the default value is true. +optional
+      autoPromotionEnabled: false
+      # Automatically promotes the current ReplicaSet to active after the specified pause delay in seconds after the ReplicaSet becomes ready. If omitted, the Rollout enters and remains in a paused state until manually resumed by resetting spec.Paused to false. +optional
+      autoPromotionSeconds: 30
+      # Adds a delay before scaling down the previous replicaset. If omitted, the Rollout waits 30 seconds before scaling down the previous ReplicaSet. A minimum of 30 seconds is recommended to ensure IP table propagation across the nodes in a cluster. See https://github.com/argoproj/argo-rollouts/issues/19#issuecomment-476329960 for more information
+      scaleDownDelaySeconds: 30
+      # Limits the number of old RS that can run at once before getting scaled down. Defaults to nil
+      scaleDownDelayRevisionLimit: 2
