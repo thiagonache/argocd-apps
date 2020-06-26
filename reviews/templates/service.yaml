@@ -17,7 +17,7 @@ kind: Service
 metadata:
   name: reviews-preview
   labels:
-    app: reviews-preview
+    app: reviews
     service: reviews-preview
 spec:
   ports:
