@@ -1,5 +1,3 @@
 reviews:
   image: docker.io/istio/examples-bookinfo-reviews-v2
-  service: reviews.bookinfo.svc.cluster.local
-prometheus:
-  address: "http://prometheus-k8s.monitoring.svc.cluster.local:9090"
+  service: reviews.default.svc.cluster.local
